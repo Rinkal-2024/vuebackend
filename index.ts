@@ -4,11 +4,11 @@ dotenv.config();
 import express from "express";
 import cors from "cors"
 import jwt from "jsonwebtoken"
-import { sample_foods, sample_tags, sample_users } from "./data";
-import foodRouter from './router/food.router';
-import userRouter from './router/user.router';
-import { dbConnect } from './configs/database.config';
-import orderRouter from './router/order.router';
+import { sample_foods, sample_tags, sample_users } from "./src/data";
+import foodRouter from './src/router/food.router';
+import userRouter from './src/router/user.router';
+import { dbConnect } from './src/configs/database.config';
+import orderRouter from './src/router/order.router';
 dbConnect();
 
 const app = express();
@@ -35,8 +35,8 @@ app.get('/home' , (req,res)=>{
     res.status(200).send('hello')
 })
 
-const port =3000;
+const port =5000;
 app.listen(port, () => {
-    console.log("your website is served on http://localhost:3000");
+    console.log("your website is served on http://localhost:5000");
 });
             
