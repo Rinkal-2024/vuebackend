@@ -9,8 +9,6 @@ import auth from '../middlewares/auth.mid';
 const router = Router();
 router.use(auth);
 
-
-
 router.post('/create',
 asyncHandler(async (req:any, res:any) => {
     const requestOrder = req.body;
