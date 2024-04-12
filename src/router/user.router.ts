@@ -33,7 +33,6 @@ router.post("/login", asyncHandler(
        else{
          res.status(400).send("Username or password is invalid!");
        }
-    
     }
   ))
   

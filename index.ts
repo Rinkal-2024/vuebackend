@@ -39,8 +39,8 @@ app.get('/home', (req,res)=>{
     res.send('hii')
 })
 
-const port =5000;
+const port = process.env.port || 5000;
 app.listen(port, () => {
-    console.log("your website is served on http://localhost:5000");
+    console.log("your website is served on http://localhost:"+port);
 });
             
