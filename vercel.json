@@ -1,15 +1,19 @@
 {
     "version": 2,
-    "builds":[
-        { "src":"index.ts", "use":"@vercel/node"}
+    "builds": [
+      {
+        "src": "index.ts",
+        "use": "@vercel/node"
+      }
     ],
-    "routes":[
-        {"src":"/api/(.*)","dest":"/index.ts"},
-        {
-            "src": "/",
-            "dest": "/index.ts"
-        }
-    ]
-
-}
-
+    "routes": [
+      { "src": "/api/food", "dest": "/index.ts" },
+      { "src": "/api/users", "dest": "/index.ts" },
+      { "src": "/api/orders", "dest": "/index.ts" },
+      { "src": "/home", "dest": "/index.ts" }
+    ],
+    "env": {
+      "MONGO_URI": "mongodb+srv://rinkal:6omMIaumiYkiZjyQ@cluster0.k3xiiif.mongodb.net/Food-Store?retryWrites=true&w=majority&appName=Cluster0"
+    }
+  }
+  
