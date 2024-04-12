@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { sample_foods, sample_tags } from "../data";
-import asynceHanler from "express-async-handler";
+import asyncHandler from "express-async-handler";
 import { FoodModel } from "../models/food.model";
 
 const router = Router();
@@ -8,7 +8,7 @@ const router = Router();
 //create Food
 router.get(
   "/seed",
-  asynceHanler(async (req, res) => {
+  asyncHandler(async (req, res) => {
     const foodCount = await FoodModel.countDocuments();
     if (foodCount > 0) {
       res.send("send is already done");
@@ -20,7 +20,7 @@ router.get(
 );
 
 //get api for All foods
-router.get("/",asynceHanler(
+router.get("/",asyncHandler(
     async (req, res) => {
     const foods = await FoodModel.find();
     res.send(foods);
@@ -28,7 +28,7 @@ router.get("/",asynceHanler(
 );
 
 //get api for search food
-router.get("/search/:searchTerm",asynceHanler( 
+router.get("/search/:searchTerm",asyncHandler( 
     async (req, res) => {
     const searchRegex = new RegExp(req.params.searchTerm,'i')
       const foods = await FoodModel.find({name: {$regex:searchRegex}})
@@ -37,7 +37,7 @@ router.get("/search/:searchTerm",asynceHanler(
 
 
 //get api for All tags
-router.get("/tags", asynceHanler(
+router.get("/tags", asyncHandler(
 async (req, res) => {   
     const tags = await FoodModel.aggregate([
         {
@@ -67,7 +67,7 @@ async (req, res) => {
 }));
 
 //get api for food by tag
-router.get("/tags/:tagName", asynceHanler(
+router.get("/tags/:tagName", asyncHandler(
  async (req, res) => {
   const foods = await FoodModel.find({tags:req.params.tagName})
   res.send(foods);
