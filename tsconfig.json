@@ -1,15 +1,12 @@
 {
   "compilerOptions": {
-    "target": "es2017",
-    "module": "commonjs",
+    "module": "CommonJS",
     "moduleResolution": "node",
     "strict": true,
-    "outDir": "./dist",
+    "outDir": "./built",
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "esModuleInterop": true
   },
-   "include": [
-    "src/**/*"
-, "index.ts"  ]
+  "include": ["src/", "src/index.ts"],
 }

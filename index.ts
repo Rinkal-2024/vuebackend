@@ -14,13 +14,13 @@ dbConnect();
 const app = express();
 app.use(express.json());
 
-app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', 'https://food-store1-alpha.vercel.app');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
-    res.setHeader('Access-Control-Allow-Credentials', '');
-    next();
-  });
+// app.use((req, res, next) => {
+//     res.setHeader('Access-Control-Allow-Origin', 'https://food-store1-alpha.vercel.app');
+//     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+//     res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+//     res.setHeader('Access-Control-Allow-Credentials', '');
+//     next();
+//   });
 app.use(cors({
     credentials : true,
     origin : ["https://food-store1-alpha.vercel.app"]
@@ -31,8 +31,12 @@ app.use("/api/users" ,userRouter);
 app.use("/api/orders" ,orderRouter);
 
 
-app.get('/home' , (req,res)=>{
+app.get('/' , (req,res)=>{
     res.status(200).send('hello')
+})
+
+app.get('/home', (req,res)=>{
+    res.send('hii')
 })
 
 const port =5000;
