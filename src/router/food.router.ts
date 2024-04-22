@@ -37,7 +37,7 @@ router.get("/search/:searchTerm",asyncHandler(
 
 
 //get api for All tags
-router.get("/tags", asyncHandler(
+router.get("/tag", asyncHandler(
 async (req, res) => {   
     const tags = await FoodModel.aggregate([
         {
@@ -67,7 +67,7 @@ async (req, res) => {
 }));
 
 //get api for food by tag
-router.get("/tags/:tagName", asyncHandler(
+router.get("/tag/:tagName", asyncHandler(
  async (req, res) => {
   const foods = await FoodModel.find({tags:req.params.tagName})
   res.send(foods);
