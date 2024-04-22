@@ -7,9 +7,9 @@ import jwt from "jsonwebtoken"
 import { sample_foods, sample_tags, sample_users } from "./data";
 import foodRouter from './router/food.router';
 import userRouter from './router/user.router';
-import { dbConnect } from './configs/database.config';
+// import { dbConnect } from './configs/database.config';
 import orderRouter from './router/order.router';
-dbConnect();
+// dbConnect();
 
 const app = express();
 app.use(express.json());
