@@ -53,7 +53,7 @@ app.get('/',(req,res)=>{
 
 app.get('/user',(req,res)=>{
 
-   res.send('hiiii')
+   res.send('hindi')
 });
 
 app.listen(port,() => {
