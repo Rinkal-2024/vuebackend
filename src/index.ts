@@ -34,13 +34,13 @@ app.use("/api/food" ,foodRouter);
 app.use("/api/users" ,userRouter);
 app.use("/api/orders" ,orderRouter);
 
-app.get('/' , (req,res)=>{
-    res.status(200).send('hello')
-})
+// app.get('/' , (req,res)=>{
+//     res.status(200).send('hello')
+// })
 
-app.get('/home', (req,res)=>{
-    res.send('hii')
-})
+// app.get('/home', (req,res)=>{
+//     res.send('hii')
+// })
 
 const port = process.env.port || 7000;
 app.listen(port, () => {
