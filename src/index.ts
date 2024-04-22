@@ -24,11 +24,11 @@ app.use(express.json());
 //     next();
 //   });
 
-app.use(cors())
-// app.use(cors({
-//     credentials : true,
-//     origin : ["https://food-store1-master.vercel.app"]
-// }));
+// app.use(cors())
+app.use(cors({
+    credentials : true,
+    origin : ["https://food-store1-master.vercel.app"]
+}));
 
 app.use("/api/food" ,foodRouter);
 app.use("/api/users" ,userRouter);
