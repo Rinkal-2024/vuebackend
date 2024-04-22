@@ -2,7 +2,7 @@
 // dotenv.config();
 // require('dotenv').config();
 import express from "express";
-import cors from "cors"
+// import cors from "cors"
 // import jwt from "jsonwebtoken"
 // import { sample_foods, sample_tags, sample_users } from "./data";
 // import foodRouter from './router/food.router';
@@ -23,10 +23,10 @@ app.use(express.json());
 //     res.setHeader('Access-Control-Allow-Credentials', '');
 //     next();
 //   });
-app.use(cors({
-    credentials : true,
-    origin : ["https://food-store1-master.vercel.app"]
-}));
+// app.use(cors({
+//     credentials : true,
+//     origin : ["https://food-store1-master.vercel.app"]
+// }));
 
 // app.use("/api/food" ,foodRouter);
 // app.use("/api/users" ,userRouter);
