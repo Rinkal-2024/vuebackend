@@ -21,12 +21,11 @@ app.use(express.json());
 //     res.setHeader('Access-Control-Allow-Credentials', '');
 //     next();
 //   });
-// app.use(cors({
-//     credentials : true,
-//     origin : ["https://food-store1-alpha.vercel.app"]
-// }));
+app.use(cors({
+    credentials : true,
+    origin : ["https://food-store1-alpha.vercel.app"]
+}));
 
-app.use(cors());
 app.use("/api/food" ,foodRouter);
 app.use("/api/users" ,userRouter);
 app.use("/api/orders" ,orderRouter);
