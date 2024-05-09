@@ -2,7 +2,7 @@ import {connect ,ConnectOptions } from "mongoose";
 
 
 export const dbConnect = () =>{
-    connect('MONGO_URI!,{
+    connect(process.env.MONGO_URI!,{
         //  userNewUrlParser : true,
         //  userUniFiedTopology :true
 
