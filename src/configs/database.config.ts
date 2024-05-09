@@ -2,7 +2,7 @@ import {connect ,ConnectOptions } from "mongoose";
 
 
 export const dbConnect = () =>{
-    connect('mongodb+srv://rinkal:FkDHnl00inldHlaS@cluster0.k3xiiif.mongodb.net/Food-Store?retryWrites=true&w=majority&appName=Cluster0',{
+    connect('MONGO_URI!,{
         //  userNewUrlParser : true,
         //  userUniFiedTopology :true
 
